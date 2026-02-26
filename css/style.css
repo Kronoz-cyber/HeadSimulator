@@ -142,8 +142,8 @@ body {
 }
 
 .card-image {
-    width: 142px;
-    height: 190px;
+    width: 220px;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -466,8 +466,8 @@ body {
     }
     
     .card-image {
-        width: 160px;
-        height: 220px;
+        width: 220px;
+        height: 300px;
     }
     
     .card-name {
