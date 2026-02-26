@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="game-container">
+    <!-- 开始页面 -->
+    <div class="start-screen" id="start-screen">
+        <h1>都市首脑模拟器</h1>
+        <button class="start-button" id="start-button">开始游戏</button>
+    </div>
+    
+    <!-- 游戏容器 -->
+    <div class="game-container" id="game-container">
         <header class="game-header">
-            <h1>都市首脑模拟器</h1>
             <div class="attributes-container">
                 <div class="attribute" data-attr="绿色" style="--color: #00ff00;">
                     <div class="attribute-bar"></div>
@@ -85,7 +91,20 @@
         // 初始化游戏
         document.addEventListener('DOMContentLoaded', function() {
             console.log('开始初始化游戏...');
-            Game.init();
+            
+            // 隐藏游戏容器，显示开始页面
+            document.getElementById('game-container').style.display = 'none';
+            document.getElementById('start-screen').style.display = 'flex';
+            
+            // 绑定开始按钮点击事件
+            document.getElementById('start-button').addEventListener('click', function() {
+                // 隐藏开始页面，显示游戏容器
+                document.getElementById('start-screen').style.display = 'none';
+                document.getElementById('game-container').style.display = 'flex';
+                
+                // 初始化游戏
+                Game.init();
+            });
         });
     </script>
 </body>
