@@ -1,0 +1,479 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* 游戏容器 */
+.game-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* 游戏头部 */
+.game-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 属性容器 */
+.attributes-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.attribute {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80px;
+    padding: 5px 0;
+}
+
+.attribute-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #444;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.attribute-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: var(--color);
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attribute-value {
+    font-size: 0.7rem;
+    color: #aaa;
+    margin-top: 4px;
+    text-align: center;
+    z-index: 1;
+}
+
+.attribute-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: var(--color);
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attribute-bar.highlighted::after {
+    box-shadow: 0 0 8px var(--color);
+}
+
+/* 按钮容器 */
+.card-buttons {
+    display: flex;
+    gap: 40px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+/* 按钮组 */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 决策按钮 */
+.decision-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: transparent; /* 隐藏按钮文字 */
+    min-width: 80px;
+}
+
+/* 拒绝按钮 */
+.reject-button {
+    background-color: #ff4444;
+}
+
+.reject-button:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
+}
+
+/* 接受按钮 */
+.accept-button {
+    background-color: #44ff44;
+}
+
+.accept-button:hover {
+    background-color: #00ff00;
+    transform: scale(1.05);
+}
+
+/* 效果指示器 */
+.effect-indicators {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+/* 效果指示点 */
+.effect-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #666;
+}
+
+/* 效果指示点颜色 */
+.effect-indicator.绿色 {
+    background-color: #00ff00;
+}
+
+.effect-indicator.血色 {
+    background-color: #ff0000;
+}
+
+.effect-indicator.橙色 {
+    background-color: #ffaa00;
+}
+
+.effect-indicator.蓝色 {
+    background-color: #00416A;
+}
+
+.effect-indicator.紫色 {
+    background-color: #8a2be2;
+}
+
+.effect-indicator.白色 {
+    background-color: #ffffff;
+}
+
+.effect-indicator.黑色 {
+    background-color: #000000;
+    border-color: #fff;
+}
+
+.effect-indicator.金色 {
+    background-color: #ffd700;
+}
+
+/* 游戏日期 */
+.game-date {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #aaa;
+    text-align: center;
+}
+
+/* 游戏主区域 */
+.game-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* 卡牌容器 */
+.card-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+/* 卡牌样式 */
+.card {
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card-image {
+    width: 142px;
+    height: 190px;
+    object-fit: cover;
+}
+
+/* 卡牌名称 */
+.card-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+/* 卡牌对话 */
+.card-dialogue {
+    max-width: 400px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(68, 68, 68, 0.8);
+    border-radius: 8px;
+    color: #fff;
+}
+
+/* 按钮容器 */
+.card-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
+}
+
+/* 决策文本 */
+.decision-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 左侧文本 */
+.left-text {
+    text-align: left;
+}
+
+/* 右侧文本 */
+.right-text {
+    text-align: right;
+}
+
+/* 决策按钮 */
+.decision-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: transparent; /* 隐藏按钮文字 */
+    min-width: 80px;
+}
+
+/* 拒绝按钮 */
+.reject-button {
+    background-color: #ff4444;
+}
+
+.reject-button:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
+}
+
+/* 接受按钮 */
+.accept-button {
+    background-color: #44ff44;
+}
+
+.accept-button:hover {
+    background-color: #00ff00;
+    transform: scale(1.05);
+}
+
+/* 卡牌掉落动画 */
+.card.fall {
+    animation: fall 0.5s ease forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+/* 加载模态框 */
+.loading-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #444;
+    border-top: 5px solid #00ff00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+}
+
+/* 结局模态框 */
+.ending-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ending-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ending-content {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ending-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.ending-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.restart-button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+    background-color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .game-header h1 {
+        font-size: 2rem;
+    }
+    
+    .attributes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-container {
+        width: 280px;
+        height: 380px;
+    }
+    
+    .card-instructions {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 10px;
+    }
+    
+    .game-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card-container {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .card-instructions {
+        width: 250px;
+        font-size: 0.8rem;
+    }
+}

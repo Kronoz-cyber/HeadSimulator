@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>都市首脑模拟器</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>都市首脑模拟器</h1>
+            <div class="attributes-container">
+                <div class="attribute" data-attr="绿色" style="--color: #00ff00;">
+                    <div class="attribute-bar"></div>
+                </div>
+                <div class="attribute" data-attr="血色" style="--color: #ff0000;">
+                    <div class="attribute-bar"></div>
+                </div>
+                <div class="attribute" data-attr="橙色" style="--color: #ffaa00;">
+                    <div class="attribute-bar"></div>
+                </div>
+                <div class="attribute" data-attr="蓝色" style="--color: #00416A;">
+                    <div class="attribute-bar"></div>
+                </div>
+                <div class="attribute" data-attr="紫色" style="--color: #8a2be2;">
+                    <div class="attribute-bar"></div>
+                </div>
+                <div class="attribute" data-attr="白色" style="--color: #ffffff;">
+                    <div class="attribute-bar"></div>
+                </div>
+                <div class="attribute" data-attr="黑色" style="--color: #000000;">
+                    <div class="attribute-bar"></div>
+                </div>
+                <div class="attribute" data-attr="金色" style="--color: #ffd700;">
+                    <div class="attribute-bar"></div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="game-main">
+            <div class="card-dialogue" id="card-dialogue"></div>
+            <div class="card-container">
+                <div class="card" id="current-card">
+                    <img src="" alt="卡牌图片" class="card-image">
+                </div>
+            </div>
+            <div class="card-name" id="card-name"></div>
+            <div class="card-buttons">
+                <div class="button-group">
+                    <div class="decision-text left-text" id="left-text"></div>
+                    <button class="decision-button reject-button"></button>
+                    <div class="effect-indicators left-indicators" id="left-indicators"></div>
+                </div>
+                <div class="button-group">
+                    <div class="decision-text right-text" id="right-text"></div>
+                    <button class="decision-button accept-button"></button>
+                    <div class="effect-indicators right-indicators" id="right-indicators"></div>
+                </div>
+            </div>
+            <div class="game-date" id="game-date">第0年，第0月</div>
+        </main>
+        
+        <div class="loading-modal" id="loading-modal">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">加载中...</p>
+            </div>
+        </div>
+        
+        <div class="ending-modal" id="ending-modal">
+            <div class="ending-content">
+                <h2 class="ending-title"></h2>
+                <p class="ending-description"></p>
+                <button class="restart-button">重新开始</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/attribute.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/ending.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+        // 初始化游戏
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('开始初始化游戏...');
+            Game.init();
+        });
+    </script>
+</body>
+</html>

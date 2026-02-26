@@ -1,0 +1,136 @@
+[
+    {
+        "id": 1,
+        "name": "阐述者",
+        "dialogue": "世界的决定者，你已苏醒。",
+        "image": "assets/images/cards/Nobody.png",
+        "startDate": {"year": 0, "month": 1, "mustAppear": 1},
+        "left": {
+            "text": "我是谁？",
+            "nextCardID":2
+        },
+        "right": {
+            "text": "我该做什么？",
+            "nextCardID":3
+        }
+    },
+    {
+        "id": 2,
+        "name": "阐述者",
+        "dialogue": "你是”首脑“的一份子，无名、无我，一切都早已注定...",
+        "image": "assets/images/cards/Nobody.png",
+        "left": {
+            "text": "我不是",
+            "nextCardID":4
+        },
+        "right": {
+            "text": "好吧",
+            "nextCardID":4
+        }
+    },
+    {
+        "id": 3,
+        "name": "阐述者",
+        "dialogue": "用你面前的两个按钮进行决断，掌控整个都市的未来",
+        "image": "assets/images/cards/Nobody.png",
+        "left": {
+            "text": "我不愿意",
+            "nextCardID":4
+        },
+        "right": {
+            "text": "好吧",
+            "nextCardID":4
+        }
+    },
+    {
+        "id": 4,
+        "name": "阐述者",
+        "dialogue": "你没得选，开始工作吧",
+        "image": "assets/images/cards/Nobody.png",
+        "left": {
+            "text": "..."
+        },
+        "right": {
+            "text": "好吧"
+        }
+    },
+    {
+        "id": 5,
+        "name": "治安官",
+        "dialogue": "城市犯罪率上升，我们需要增加警力，但这会增加财政负担。",
+        "image": "assets/images/cards/Nobody.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
+        "left": {
+            "text": "拒绝3",
+            "effects": {
+                "blood": -15,
+                "black": 10
+            }
+        },
+        "right": {
+            "text": "接受3",
+            "effects": {
+                "blood": 10,
+                "gold": -5,
+                "white": 5
+            }
+        }
+    },
+    {
+        "id": 6,
+        "name": "科技公司",
+        "dialogue": "我们可以为城市提供先进的AI技术，但需要更多的能源供应。",
+        "image": "assets/images/cards/Nobody.png",
+        "startDate": {"year": 0, "month": 1, "mustAppear": 0},
+        "left": {
+            "text": "拒绝4",
+            "effects": {
+                "blue": -10,
+                "green": 5
+            }
+        },
+        "right": {
+            "text": "接受4",
+            "effects": {
+                "blue": 15,
+                "green": -10,
+                "gold": 5
+            }
+        }
+    },
+    {
+        "id": 7,
+        "name": "医疗组织",
+        "dialogue": "我们需要改善医疗条件，但这需要大量资金投入。",
+        "image": "assets/images/cards/Nobody.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 1},
+        "left": {
+            "text": "拒绝5",
+            "effects": {
+                "white": -15,
+                "gold": 5
+            }
+        },
+        "right": {
+            "text": "接受5",
+            "effects": {
+                "white": 10,
+                "gold": -10,
+                "blood": 5
+            }
+        }
+    },
+    {
+        "id": 8,
+        "name": "调律者",
+        "dialogue": "111111。",
+        "image": "assets/images/cards/Arbiter.png",
+        "startDate": {"year": 0, "month": 2, "mustAppear": 0},
+        "left": {
+            "text": "1111"
+        },
+        "right": {
+            "text": "1112"
+        }
+    }
+]
