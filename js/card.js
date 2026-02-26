@@ -167,6 +167,9 @@ const Card = {
             this.updateGameDate();
         }
         
+        // 预加载下一张卡牌的图片
+        this.preloadNextCardImage();
+        
         // 延迟生成新卡牌
         setTimeout(() => {
             // 移除动画类
@@ -174,6 +177,38 @@ const Card = {
             // 生成新卡牌
             this.generateCard();
         }, 500);
+    },
+    
+    // 预加载下一张卡牌的图片
+    preloadNextCardImage() {
+        // 获取下一张卡牌的ID
+        let nextCardId = this.nextCardID;
+        
+        if (!nextCardId) {
+            // 如果没有指定nextCardID，随机选择一张符合条件的卡牌
+            const { mustAppearCards, regularCards } = this.getEligibleCards();
+            
+            if (mustAppearCards.length > 0) {
+                const randomIndex = Math.floor(Math.random() * mustAppearCards.length);
+                nextCardId = mustAppearCards[randomIndex].id;
+            } else if (regularCards.length > 0) {
+                const randomIndex = Math.floor(Math.random() * regularCards.length);
+                nextCardId = regularCards[randomIndex].id;
+            } else {
+                // 如果没有符合条件的卡牌，随机选择一张
+                const randomIndex = Math.floor(Math.random() * this.cards.length);
+                nextCardId = this.cards[randomIndex].id;
+            }
+        }
+        
+        // 查找下一张卡牌
+        const nextCard = this.cards.find(card => card.id === nextCardId);
+        
+        if (nextCard && nextCard.image) {
+            // 预加载图片
+            const img = new Image();
+            img.src = nextCard.image + '?t=' + new Date().getTime();
+        }
     },
     
     // 更新游戏日期
