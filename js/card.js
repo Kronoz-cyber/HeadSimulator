@@ -16,6 +16,13 @@ const Card = {
     isDragging: false,
     // 下一张卡牌ID
     nextCardID: null,
+    // 已抽取的卡牌ID
+    drawnCards: [],
+    // 游戏日期
+    gameDate: {
+        year: 0,
+        month: 1
+    },
     
     // 初始化卡牌系统
     init(containerSelector, elementSelector) {
@@ -253,26 +260,33 @@ const Card = {
         // 获取符合当前日期条件的卡牌
         const { mustAppearCards, regularCards } = this.getEligibleCards();
         
+        // 过滤掉已抽取的卡牌
+        const availableMustAppearCards = mustAppearCards.filter(card => !this.drawnCards.includes(card.id));
+        const availableRegularCards = regularCards.filter(card => !this.drawnCards.includes(card.id));
+        
         // 输出符合条件的卡牌
-        console.log('必定出现的卡牌:', mustAppearCards);
-        console.log('普通卡牌:', regularCards);
+        console.log('必定出现的卡牌:', availableMustAppearCards);
+        console.log('普通卡牌:', availableRegularCards);
         
         // 检查是否有必定出现的卡牌
-        if (mustAppearCards.length > 0) {
+        if (availableMustAppearCards.length > 0) {
             // 如果有必定出现的卡牌，优先选择
-            const randomIndex = Math.floor(Math.random() * mustAppearCards.length);
-            this.currentCard = mustAppearCards[randomIndex];
+            const randomIndex = Math.floor(Math.random() * availableMustAppearCards.length);
+            this.currentCard = availableMustAppearCards[randomIndex];
+            // 将当前卡牌添加到已抽取列表
+            this.drawnCards.push(this.currentCard.id);
             console.log('选择必定出现的卡牌:', this.currentCard);
-        } else if (regularCards.length > 0) {
+        } else if (availableRegularCards.length > 0) {
             // 如果没有必定出现的卡牌，从普通卡牌中选择
-            const randomIndex = Math.floor(Math.random() * regularCards.length);
-            this.currentCard = regularCards[randomIndex];
+            const randomIndex = Math.floor(Math.random() * availableRegularCards.length);
+            this.currentCard = availableRegularCards[randomIndex];
+            // 将当前卡牌添加到已抽取列表
+            this.drawnCards.push(this.currentCard.id);
             console.log('选择普通卡牌:', this.currentCard);
         } else {
-            // 如果没有符合条件的卡牌，随机选择一张
-            const randomIndex = Math.floor(Math.random() * this.cards.length);
-            this.currentCard = this.cards[randomIndex];
-            console.log('随机选择卡牌:', this.currentCard);
+            // 如果没有符合条件的卡牌，使用默认卡牌
+            console.log('没有可用卡牌，使用默认卡牌');
+            this.currentCard = this.getDefaultCards()[0];
         }
         
         // 更新卡牌UI
@@ -366,6 +380,8 @@ const Card = {
         this.gameDate.month = 1;
         // 重置nextCardID
         this.nextCardID = null;
+        // 重置已抽取的卡牌
+        this.drawnCards = [];
         // 初始化游戏日期显示
         const dateElement = document.getElementById('game-date');
         if (dateElement) {

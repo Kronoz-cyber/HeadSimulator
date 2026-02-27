@@ -2,11 +2,11 @@
     {
         "id": 1,
         "name": "阐述者",
-        "dialogue": "世界的决定者，你已苏醒。",
-        "image": "assets/images/cards/Nobody.png",
+        "dialogue": "醒来吧，被选中者————世界的执政官。",
+        "image": "assets/images/cards/Exponent.png",
         "startDate": {"year": 0, "month": 1, "mustAppear": 1},
         "left": {
-            "text": "我是谁？",
+            "text": "我...是谁？",
             "nextCardID":2
         },
         "right": {
@@ -17,22 +17,22 @@
     {
         "id": 2,
         "name": "阐述者",
-        "dialogue": "你是”首脑“的一份子，无名、无我，一切都早已注定...",
-        "image": "assets/images/cards/Nobody.png",
+        "dialogue": "你承载着“首脑”之名，却无个人之悲喜，你是万千意念中凝出的一滴净水。",
+        "image": "assets/images/cards/Exponent.png",
         "left": {
             "text": "我不是",
-            "nextCardID":4
+            "nextCardID":3
         },
         "right": {
             "text": "好吧",
-            "nextCardID":4
+            "nextCardID":3
         }
     },
     {
         "id": 3,
         "name": "阐述者",
-        "dialogue": "用你面前的两个按钮进行决断，掌控整个都市的未来",
-        "image": "assets/images/cards/Nobody.png",
+        "dialogue": "在你面前的两个按钮，是种子，也是果实————按下其一，便是为这座都市的明天，落下不可更改的注脚。",
+        "image": "assets/images/cards/Exponent.png",
         "left": {
             "text": "我不愿意",
             "nextCardID":4
@@ -45,8 +45,8 @@
     {
         "id": 4,
         "name": "阐述者",
-        "dialogue": "你没得选，开始工作吧",
-        "image": "assets/images/cards/Nobody.png",
+        "dialogue": "莫问选择，你即是选择本身。请开始吧，这是独属于你的，寂静的使命。",
+        "image": "assets/images/cards/Exponent.png",
         "left": {
             "text": "..."
         },
@@ -56,81 +56,226 @@
     },
     {
         "id": 5,
-        "name": "治安官",
-        "dialogue": "城市犯罪率上升，我们需要增加警力，但这会增加财政负担。",
-        "image": "assets/images/cards/Nobody.png",
+        "name": "眼线",
+        "dialogue": "疑似非人知性体出现在E巢后巷C区。请示：是否采取行动？",
+        "image": "assets/images/cards/Eye.png",
         "startDate": {"year": 0, "month": 3, "mustAppear": 0},
         "left": {
-            "text": "拒绝3",
+            "text": "继续观察",
             "effects": {
-                "blood": -15,
-                "black": 10
+                "green":20
             }
         },
         "right": {
-            "text": "接受3",
+            "text": "委派调律者",
             "effects": {
-                "blood": 10,
-                "gold": -5,
-                "white": 5
+                "green":-10,
+                "white":-5
             }
         }
     },
     {
         "id": 6,
-        "name": "科技公司",
-        "dialogue": "我们可以为城市提供先进的AI技术，但需要更多的能源供应。",
-        "image": "assets/images/cards/Nobody.png",
-        "startDate": {"year": 0, "month": 1, "mustAppear": 0},
+        "name": "眼线",
+        "dialogue": "T巢后巷L区监测到高浓度认知扭曲波动。一疑似扭曲的实体已引发半径3000米内七起认知污染事件。",
+        "image": "assets/images/cards/Eye.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
         "left": {
-            "text": "拒绝4",
+            "text": "保持现状",
             "effects": {
-                "blue": -10,
-                "green": 5
+                "white":-15,
+                "purple":10,
+                "blue":-10
             }
         },
         "right": {
-            "text": "接受4",
+            "text": "授权协会处理",
             "effects": {
-                "blue": 15,
-                "green": -10,
-                "gold": 5
+                "white":10,
+                "purple":-5
             }
         }
     },
     {
         "id": 7,
-        "name": "医疗组织",
-        "dialogue": "我们需要改善医疗条件，但这需要大量资金投入。",
-        "image": "assets/images/cards/Nobody.png",
-        "startDate": {"year": 0, "month": 3, "mustAppear": 1},
+        "name": "眼线",
+        "dialogue": "WARP公司某前雇员试图在黑市出售“W列车头等舱”内部空间拓扑图碎片。",
+        "image": "assets/images/cards/Eye.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
         "left": {
-            "text": "拒绝5",
+            "text": "无需干涉",
             "effects": {
-                "white": -15,
-                "gold": 5
+                "green":-10,
+                "white":5
             }
         },
         "right": {
-            "text": "接受5",
+            "text": "抹除所有相关人员",
             "effects": {
-                "white": 10,
-                "gold": -10,
-                "blood": 5
+                "green":15
             }
         }
     },
     {
         "id": 8,
+        "name": "眼线",
+        "dialogue": "某后巷出版社流通的童谣集《星星与灰烬的歌谣》，被检测出具有缓慢的精神诱导模因。目前销量847本。",
+        "image": "assets/images/cards/Eye.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
+        "left": {
+            "text": "无需干涉",
+            "effects": {
+                "purple":10,
+                "blood":-5
+            }
+        },
+        "right": {
+            "text": "全部召回并焚毁",
+            "effects": {
+                "purple":-10,
+                "blood":10
+            }
+        }
+    },
+    {
+        "id": 9,
+        "name": "眼线",
+        "dialogue": "三所“翼”下属研究机构的“首脑”指令执行效率在过去周期内下降了0.7%，处于黄色警戒阈值。",
+        "image": "assets/images/cards/Eye.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
+        "left": {
+            "text": "提升监控等级",
+            "effects": {
+                "white":-5,
+                "green":5
+            }
+        },
+        "right": {
+            "text": "进行压力测试",
+            "effects": {
+                "white":-10
+            }
+        }
+    },
+    {
+        "id": 10,
+        "name": "眼线",
+        "dialogue": "都市痛苦指数维持在基准线上方2.1%，但增长曲线趋于平缓。",
+        "image": "assets/images/cards/Eye.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
+        "left": {
+            "text": "还不够",
+            "effects": {
+                "blood":10
+            }
+        },
+        "right": {
+            "text": "这很好",
+            "effects": {
+                "blood":-5
+            }
+        }
+    },
+    {
+        "id": 11,
+        "name": "眼线",
+        "dialogue": "预测显示，下一次大规模冲突事件有68%概率在15个工作日内于G巢爆发。",
+        "image": "assets/images/cards/Eye.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
+        "left": {
+            "text": "不采取行动",
+            "effects": {
+                "blood":10,
+                "blue":-10
+            }
+        },
+        "right": {
+            "text": "提前部署爪牙",
+            "effects": {
+                "blood":-10,
+                "white":-5
+            }
+        }
+    },
+    {
+        "id": 12,
+        "name": "眼线",
+        "dialogue": "检测到U巢新增的扭曲疑似与某已注销“色彩级”收尾人活动轨迹重合。",
+        "image": "assets/images/cards/Eye.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 0},
+        "left": {
+            "text": "停止调查",
+            "effects": {
+                "white":10,
+                "blood":10,
+                "purple":5
+            }
+        },
+        "right": {
+            "text": "深入追踪",
+            "effects": {
+                "white":-5,
+                "blood":-10,
+                "purple":-5
+            }
+        }
+    },
+    {
+        "id": 13,
+        "name": "爪牙",
+        "dialogue": "您就是我们新上任的执政官？",
+        "image": "assets/images/cards/Claw.png",
+        "startDate": {"year": 0, "month": 2, "mustAppear": 0},
+        "left": {
+            "text": "不是",
+            "effects": {
+                "white": -10,
+                "red": 5
+            }
+        },
+        "right": {
+            "text": "是的",
+            "effects": {
+                "red": -10,
+                "white": 5
+            }
+        }
+    },
+    {
+        "id": 14,
+        "name": "爪牙",
+        "dialogue": "我们需要升级现有的血清技术，但这需要大量资金投入。",
+        "image": "assets/images/cards/Claw.png",
+        "startDate": {"year": 0, "month": 3, "mustAppear": 1},
+        "left": {
+            "text": "拒绝",
+            "effects": {
+                "white": -15,
+                "orange": 5,
+                "green":-5
+            }
+        },
+        "right": {
+            "text": "接受",
+            "effects": {
+                "green":5,
+                "white": 20,
+                "orange": -10,
+                "blood": 5
+            }
+        }
+    },
+    {
+        "id": 15,
         "name": "调律者",
-        "dialogue": "111111。",
+        "dialogue": "还请时刻留意上方的颜色量表，一个优秀的管理者总是深谙制衡之道。",
         "image": "assets/images/cards/Arbiter.png",
         "startDate": {"year": 0, "month": 2, "mustAppear": 0},
         "left": {
-            "text": "1111"
+            "text": "我不在乎"
         },
         "right": {
-            "text": "1112"
+            "text": "我会注意"
         }
     }
 ]
