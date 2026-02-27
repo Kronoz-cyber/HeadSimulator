@@ -29,9 +29,17 @@ body {
 
 .start-screen h1 {
     font-size: 2.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     color: #f0f0f0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.start-screen h2 {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     text-align: center;
 }
 
@@ -81,6 +89,13 @@ body {
     align-items: center;
     max-width: 60px;
     padding: 5px 0;
+}
+
+.attribute-icon {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 5px;
+    vertical-align: middle;
 }
 
 .attribute-bar {

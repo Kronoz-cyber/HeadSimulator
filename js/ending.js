@@ -200,7 +200,7 @@ const Ending = {
     },
     
     // 显示结局
-    showEnding(endingData) {
+    showEnding(endingData, gameDate) {
         const { attribute, value } = endingData;
         
         // 查找匹配的结局
@@ -224,7 +224,9 @@ const Ending = {
             }
             
             if (this.descriptionElement) {
-                this.descriptionElement.textContent = matchedEnding.description;
+                // 添加玩家的执政年月数
+                const termText = `任期${gameDate.year}年${gameDate.month}月`;
+                this.descriptionElement.textContent = matchedEnding.description + '\n' + termText;
             }
             
             // 显示结局模态框

@@ -161,7 +161,7 @@ const Card = {
             const ending = Attribute.update(effects);
             // 检查是否触发结局
             if (ending) {
-                Ending.showEnding(ending);
+                Ending.showEnding(ending, this.gameDate);
                 return; // 不再继续执行后续逻辑
             }
         }
