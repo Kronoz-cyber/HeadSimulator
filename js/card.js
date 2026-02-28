@@ -166,6 +166,13 @@ const Card = {
             }
         }
         
+        // 检查是否触发结局（即使没有effects）
+        const ending = Attribute.checkEnding();
+        if (ending) {
+            Ending.showEnding(ending, this.gameDate);
+            return; // 不再继续执行后续逻辑
+        }
+        
         // 检查是否有nextCardID
         this.nextCardID = this.currentCard[side].nextCardID || null;
         

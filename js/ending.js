@@ -201,6 +201,11 @@ const Ending = {
     
     // 显示结局
     showEnding(endingData, gameDate) {
+        // 手动获取HTML元素，确保它们被正确找到
+        const modal = document.getElementById('ending-modal');
+        const titleElement = document.querySelector('.ending-title');
+        const descriptionElement = document.querySelector('.ending-description');
+        
         const { attribute, value } = endingData;
         
         // 查找匹配的结局
@@ -217,22 +222,16 @@ const Ending = {
             }
         }
         
-        if (matchedEnding) {
+        if (matchedEnding && modal && titleElement && descriptionElement) {
             // 更新结局UI
-            if (this.titleElement) {
-                this.titleElement.textContent = matchedEnding.title;
-            }
+            titleElement.textContent = matchedEnding.title;
             
-            if (this.descriptionElement) {
-                // 添加玩家的执政年月数
-                const termText = `任期${gameDate.year}年${gameDate.month}月`;
-                this.descriptionElement.textContent = matchedEnding.description + '\n' + termText;
-            }
+            // 添加玩家的执政年月数
+            const termText = `任期：${gameDate.year}年${gameDate.month}月`;
+            descriptionElement.innerHTML = termText + '<br><br>' + matchedEnding.description;
             
             // 显示结局模态框
-            if (this.modal) {
-                this.modal.classList.add('active');
-            }
+            modal.classList.add('active');
         }
     },
     
